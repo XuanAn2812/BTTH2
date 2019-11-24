@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body h1 {
+            font-size: 7;
+        }
+        
+        body form table {
+            border-color: #FF3366;
+            background-color: #3399FF;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center"><b>Đăng Nhập</b></h1>
+    <form>
+        <table border="1" cellpadding="6" cellspacing="0" align="center">
+            <tbody>
+                <tr>
+                    <td><label for="account">Mã Người Dùng:</label></td>
+                    <td><input type="text" id="UserName"></td>
+                </tr>
+                <tr>
+                    <td><label for="pass">Mật Khẩu:</label></td>
+                    <td><input type="password" id="PassWord"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><button type="button" id="btn">Đồng ý</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p id="action"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script type="text/javascript">
+        let newLogin = document.getElementById('btn');
+        newLogin.addEventListener('click', function() {
+            let username = document.getElementById('UserName');
+            let a = username.value;
+            let password = document.getElementById('PassWord');
+            let b = password.value;
+            let notice = document.getElementById('action');
+            if (a == 'xuanan' && b == '1') {
+                notice.innerHTML = 'Bạn Đã Đăng Nhập Thành Công';
+                notice.style.color = 'red';
+            } else {
+                notice.innerHTML = 'Đăng Nhập Thất Bại';
+            }
+        });
+    </script>
+</body>
+
+</html>
